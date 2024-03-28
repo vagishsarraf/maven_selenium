@@ -16,7 +16,7 @@ public class GoogleSearchPage {
 	CommonFunctions functions;
 	private Logger log = LogManager.getLogger(this.getClass());
 
-	@FindBy(xpath = "//input[@name='q']")
+	@FindBy(xpath = "//textarea[@name='q']")
 	private WebElement eleSearchBar;
 
 	public GoogleSearchPage(WebDriver driver) {
