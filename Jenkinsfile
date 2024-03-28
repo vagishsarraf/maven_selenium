@@ -10,9 +10,7 @@ pipeline {
         stage('Build') {
             steps {
                 git 'https://github.com/vagishsarraf/maven_selenium.git'
-
-                // Run Maven on a Unix agent.
-                sh 'ls'
+                sh 'pwd'
                 sh "mvn verify sonar:sonar -Dsonar.projectKey=maven_CICD -Dsonar.projectName='maven_CICD' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=maven"
                 sh "mvn -Dmaven.test.failure.ignore=true clean package"
 
