@@ -1,29 +1,37 @@
 pipeline {
-    agent any
-
-    tools {
-        // Install the Maven version configured as "M3" and add it to the path.
+  agent any
+  tools {
         maven "maven"
-    }
+   }
 
-    stages {
-        stage('Build') {
+  stages {
+      stage('Build Artifact') {
             steps {
-                git 'https://github.com/vagishsarraf/maven_selenium.git'
-                sh 'pwd'
-                sh "mvn verify sonar:sonar -Dsonar.projectKey=maven_CICD -Dsonar.projectName='maven_CICD' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=maven"
-                sh "mvn -Dmaven.test.failure.ignore=true clean package"
-
+              sh "mvn clean package -DskipTests=true"
+              archive 'target/*.jar'
             }
-
-            post {
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                    junit '**/target/surefire-reports/TEST-*.xml'
-                    archiveArtifacts 'target/*.jar'
-                }
+       }
+      stage('Test Maven - JUnit') {
+            steps {
+              sh "mvn test"
+            }
+            post{
+              always{
+                junit 'target/surefire-reports/*.xml'
+              }
             }
         }
-    }
+      stage('Sonarqube Analysis - SAST') {
+            steps {
+                  withSonarQubeEnv('sonar') {
+           sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline -Dsonar.host.url=http://localhost:9000"
+                }
+           timeout(time: 2, unit: 'MINUTES') {
+                      script {
+                        waitForQualityGate abortPipeline: true
+                    }
+                }
+              }
+        }
+     }
 }
