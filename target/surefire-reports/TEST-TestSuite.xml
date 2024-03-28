@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="38.659" tests="2" errors="0" skipped="0" failures="1">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="16.346" tests="1" errors="0" skipped="0" failures="0">
   <properties>
-    <property name="sonar.projectName" value="maven_CICD"/>
     <property name="java.specification.version" value="21"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
-    <property name="sonar.host.url" value="http://localhost:9000"/>
     <property name="java.class.path" value="/opt/homebrew/Cellar/maven/3.9.5/libexec/boot/plexus-classworlds-2.7.0.jar"/>
     <property name="java.vm.vendor" value="Homebrew"/>
     <property name="sun.arch.data.model" value="64"/>
@@ -16,7 +14,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="/opt/homebrew/Cellar/openjdk/21.0.2/libexec/openjdk.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher verify sonar:sonar -Dsonar.projectKey=maven_CICD -Dsonar.projectName=maven_CICD -Dsonar.host.url=http://localhost:9000 -Dsonar.token=maven"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="maven.home" value="/opt/homebrew/Cellar/maven/3.9.5/libexec"/>
@@ -46,14 +44,12 @@
     <property name="java.vendor.version" value="Homebrew"/>
     <property name="java.vendor.url.bug" value="https://github.com/Homebrew/homebrew-core/issues"/>
     <property name="java.io.tmpdir" value="/var/folders/p2/grxvp3_d7kd4mddn7912gzxc0000gq/T/"/>
-    <property name="sonar.token" value="maven"/>
     <property name="java.version" value="21.0.2"/>
     <property name="user.dir" value="/Users/vagish.saraf/Documents/IntelliJ/vagish"/>
     <property name="os.arch" value="aarch64"/>
     <property name="maven.multiModuleProjectDirectory" value="/Users/vagish.saraf/Documents/IntelliJ/vagish"/>
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
     <property name="native.encoding" value="UTF-8"/>
-    <property name="sonar.projectKey" value="maven_CICD"/>
     <property name="java.library.path" value="/Users/vagish.saraf/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.vm.info" value="mixed mode, sharing"/>
     <property name="stderr.encoding" value="UTF-8"/>
@@ -65,21 +61,5 @@
     <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="validateGoogleResult" classname="com.google.tests.GoogleSearchTest" time="1.348"/>
-  <testcase name="validateGoogleResult" classname="com.google.tests.GoogleSearchTest" time="21.516">
-    <failure message="Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //a[contains(@href, &apos;selenium.dev&apos;)]/h3&apos; (tried for 15 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //a[contains(@href, 'selenium.dev')]/h3' (tried for 15 second(s) with 500 milliseconds interval)
-	at com.google.tests.GoogleSearchTest.validateGoogleResult(GoogleSearchTest.java:66)
-Caused by: org.openqa.selenium.NoSuchElementException: 
-no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@href, 'selenium.dev')]/h3"}
-  (Session info: chrome=123.0.6312.87)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.18.1', revision: 'b1d3319b48'
-System info: os.name: 'Mac OS X', os.arch: 'aarch64', os.version: '14.2.1', java.version: '21.0.2'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6c631c621826916621b9b596abd97ff2, findElement {value=//a[contains(@href, 'selenium.dev')]/h3, using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 123.0.6312.87, chrome: {chromedriverVersion: 123.0.6312.86 (9b72c47a0536..., userDataDir: /var/folders/p2/grxvp3_d7kd...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:52629}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: mac, proxy: Proxy(), se:cdp: ws://localhost:52629/devtoo..., se:cdpVersion: 123.0.6312.87, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6c631c621826916621b9b596abd97ff2
-	at com.google.tests.GoogleSearchTest.validateGoogleResult(GoogleSearchTest.java:66)
-</failure>
-  </testcase>
+  <testcase name="validateGoogleResult" classname="com.google.tests.GoogleSearchTest" time="1.58"/>
 </testsuite>

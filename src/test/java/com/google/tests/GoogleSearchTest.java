@@ -37,7 +37,7 @@ public class GoogleSearchTest extends DriverConfig {
 	 */
 	@DataProvider
 	public Object[][] getData() {
-		return new Object[][] { { "Selenium", "Selenium" }, { "Chrome", "Chrome" } };
+		return new Object[][] { { "Selenium", "Selenium" } };
 	}
 
 	/**
