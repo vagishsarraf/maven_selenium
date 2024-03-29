@@ -16,6 +16,9 @@ import com.google.pages.GoogleSearchPage;
 
 import config.DriverConfig;
 
+import java.net.MalformedURLException;
+import java.net.URISyntaxException;
+
 @Listeners(listeners.TestNGListener.class)
 public class GoogleSearchTest extends DriverConfig {
 	public WebDriver driver;
@@ -26,8 +29,8 @@ public class GoogleSearchTest extends DriverConfig {
 	 * 
 	 */
 	@BeforeTest
-	public void setup() {
-		driver = initializeDriver();
+	public void setup() throws MalformedURLException, URISyntaxException {
+		driver = initializeRemoteDriver();
 	}
 
 	/**
@@ -66,6 +69,7 @@ public class GoogleSearchTest extends DriverConfig {
 		String actualText = resultsPage.getFirstResult();
 
 		Assert.assertTrue(actualText.contains(expectedResult), "Actual: " + actualText);
+		Assert.assertTrue(true);
 	}
 
 	/**
@@ -75,7 +79,7 @@ public class GoogleSearchTest extends DriverConfig {
 	public void tearDown() {
 		if (driver != null) {
 			log.debug("End of Test. Closing driver" + System.lineSeparator());
-			driver.close();
+			driver.quit();
 		}
 	}
 

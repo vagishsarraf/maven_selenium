@@ -2,20 +2,20 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-03-28T22:21:36 IST" name="Suite" finished-at="2024-03-28T22:21:42 IST" duration-ms="5720">
+  <suite started-at="2024-03-29T15:56:20 IST" name="Suite" finished-at="2024-03-29T15:56:26 IST" duration-ms="6688">
     <groups>
     </groups>
-    <test started-at="2024-03-28T22:21:36 IST" name="GoogleTest" finished-at="2024-03-28T22:21:42 IST" duration-ms="5720">
+    <test started-at="2024-03-29T15:56:20 IST" name="GoogleTest" finished-at="2024-03-29T15:56:26 IST" duration-ms="6688">
       <class name="com.google.tests.GoogleSearchTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@4fbe37eb]" started-at="2024-03-28T22:21:36 IST" name="setup" finished-at="2024-03-28T22:21:39 IST" duration-ms="2291" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.google.tests.GoogleSearchTest@1ef6d34c]" started-at="2024-03-29T15:56:20 IST" name="setup" finished-at="2024-03-29T15:56:23 IST" duration-ms="3208" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method is-config="true" signature="launchURL()[pri:0, instance:com.google.tests.GoogleSearchTest@4fbe37eb]" started-at="2024-03-28T22:21:39 IST" name="launchURL" finished-at="2024-03-28T22:21:40 IST" duration-ms="1677" status="PASS">
+        <test-method is-config="true" signature="launchURL()[pri:0, instance:com.google.tests.GoogleSearchTest@1ef6d34c]" started-at="2024-03-29T15:56:23 IST" name="launchURL" finished-at="2024-03-29T15:56:25 IST" duration-ms="1726" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchURL -->
-        <test-method signature="validateGoogleResult(java.lang.String,java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@4fbe37eb]" started-at="2024-03-28T22:21:40 IST" name="validateGoogleResult" data-provider="getData" finished-at="2024-03-28T22:21:42 IST" duration-ms="1579" status="PASS">
+        <test-method signature="validateGoogleResult(java.lang.String,java.lang.String)[pri:0, instance:com.google.tests.GoogleSearchTest@1ef6d34c]" started-at="2024-03-29T15:56:25 IST" name="validateGoogleResult" data-provider="getData" finished-at="2024-03-29T15:56:26 IST" duration-ms="1493" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -31,7 +31,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- validateGoogleResult -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@4fbe37eb]" started-at="2024-03-28T22:21:42 IST" name="tearDown" finished-at="2024-03-28T22:21:42 IST" duration-ms="154" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.google.tests.GoogleSearchTest@1ef6d34c]" started-at="2024-03-29T15:56:26 IST" name="tearDown" finished-at="2024-03-29T15:56:26 IST" duration-ms="110" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

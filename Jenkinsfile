@@ -5,11 +5,11 @@ pipeline {
     }
 
     stages {
-    stage('Prepare Selenoid') {
-                steps {
-                    sh 'docker-compose up -d'
-                }
+        stage('Prepare Selenoid') {
+            steps {
+                sh 'docker-compose up -d'
             }
+        }
         stage('Sonarqube Analysis - SAST') {
             steps {
                 withSonarQubeEnv('sonar') {
@@ -31,6 +31,11 @@ pipeline {
                 always{
                     junit 'target/surefire-reports/*.xml'
                 }
+            }
+        }
+        stage('Stop docker containers') {
+            steps {
+                sh 'docker-compose down'
             }
         }
     }
