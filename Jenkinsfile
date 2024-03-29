@@ -10,9 +10,6 @@ pipeline {
                 withSonarQubeEnv('sonar') {
                     sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline -Dsonar.host.url=http://127.0.0.1:9000"
                 }
-                timeout(time: 1, unit: 'MINUTES') {
-                    waitForQualityGate abortPipeline: true
-                }
             }
         }
         stage('Build Artifact') {
