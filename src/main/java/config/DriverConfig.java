@@ -59,10 +59,8 @@ public class DriverConfig {
 	public WebDriver initializeRemoteDriver() throws URISyntaxException, MalformedURLException {
 		loadProperty();
 		String str = "http://localhost:4444/wd/hub";
-		String str1 = "http://localhost:4444/wd/hub";
 		URI uri = new URI(str);
 		URL url = uri.toURL();
-		log.debug("Running on browser: " + getBrowser());
 		ChromeOptions options = new ChromeOptions();
 		driver = new RemoteWebDriver(url, options);
 		log.debug("Driver initialized");
