@@ -34,7 +34,6 @@ public class GoogleResultsPage {
 
 		if (functions.waitForElement(eleResults)) {
 			text = eleResults.getText();
-			log.info("Result found: " + text);
 		}
 		return text;
 	}

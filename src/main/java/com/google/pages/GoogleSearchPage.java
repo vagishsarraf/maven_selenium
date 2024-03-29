@@ -35,7 +35,6 @@ public class GoogleSearchPage {
 			log.info("Search bar found");
 			eleSearchBar.click();
 			eleSearchBar.sendKeys(text);
-			log.info("Entered text: " + text);
 			eleSearchBar.sendKeys(Keys.ENTER);
 		}
 	}

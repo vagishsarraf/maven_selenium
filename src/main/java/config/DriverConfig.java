@@ -25,7 +25,7 @@ public class DriverConfig {
 	private Logger log = LogManager.getLogger(this.getClass());
 
 	// resource paths
-	private final String propsFilepath = "/resources/config.properties";
+	private static String propsFilepath = "/resources/config.properties";
 
 	/**
 	 * initialize driver
