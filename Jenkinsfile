@@ -5,6 +5,11 @@ pipeline {
     }
 
     stages {
+    stage('Prepare Selenoid') {
+                steps {
+                    sh 'docker-compose up -d'
+                }
+            }
         stage('Sonarqube Analysis - SAST') {
             steps {
                 withSonarQubeEnv('sonar') {
