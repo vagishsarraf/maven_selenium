@@ -15,6 +15,10 @@ pipeline {
                 withSonarQubeEnv('sonar') {
                     sh "mvn sonar:sonar -Dsonar.projectKey=maven-jenkins-pipeline"
                 }
+                def qualitygate = waitForQualityGate()
+                      if (qualitygate.status != "OK") {
+                         error "Pipeline aborted due to quality gate coverage failure: ${qualitygate.status}"
+                      }
             }
         }
         stage("Quality Gate") {
