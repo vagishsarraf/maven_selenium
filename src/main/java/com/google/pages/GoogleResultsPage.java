@@ -13,7 +13,6 @@ public class GoogleResultsPage {
 	@SuppressWarnings("unused")
 	private WebDriver driver;
 	CommonFunctions functions;
-	private Logger log = LogManager.getLogger(this.getClass());
 
 	@FindBy(xpath = "//a[contains(@href, 'selenium.dev')]/h3")
 	private WebElement eleResults;
